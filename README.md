@@ -10,9 +10,21 @@ In particular Audio Digit-Fig3c_Fig3f.zip
 
 and the following MATLAB code to convert the csv files to mat files
 
-res_sq_flt= readmatrix('res_sq_flt1.csv');
-label= readmatrix('label.csv');
-save('res_sq_digits.mat','res_sq_flt');
-save('label_digits.mat','label');
+res_sq_flt= readmatrix('res_sq_flt1.csv');  
+label= readmatrix('label.csv');  
+save('res_sq_digits.mat','res_sq_flt');  
+save('label_digits.mat','label');  
 
+The included Python notebook is based on
+BPM_SpokenDigit_paper.ipynb in the paper's repository
 
+"""  
+import scipy.io as sio  
+f = sio.loadmat(filepath+'New_audio/flattened_longer.mat')  
+inp2 = f['flattened']  
+
+#Load data  
+f2 = sio.loadmat(filepath+'New_audio/label_digits.mat')  
+
+out = np.squeeze(f2['label'])  
+"""  
