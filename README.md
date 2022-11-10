@@ -15,8 +15,10 @@ label= readmatrix('label.csv');
 save('res_sq_digits.mat','res_sq_flt');  
 save('label_digits.mat','label');  
 
-The included Python notebook is based on
-BPM_SpokenDigit_paper.ipynb in the paper's repository
+The included Python notebook is based on  
+BPM_SpokenDigit_paper.ipynb in the paper's repository  
+This program looks for .mat files that are not in the paper's repository, see snippet from  
+BPM_SpokenDigit_paper.ipynb below
 
 """  
 import scipy.io as sio  
@@ -28,3 +30,14 @@ f2 = sio.loadmat(filepath+'New_audio/label_digits.mat')
 
 out = np.squeeze(f2['label'])  
 """  
+The back end seems to do a better job with the original spectrograms than the the spactrograms after passage through the nonlinear fiber.  
+Typical original spectrogram (downsampled to 22 by 22 as in the paper)  
+![typinputoriginal_spectrograms](https://user-images.githubusercontent.com/36680270/201202824-13ed3a00-b45e-415a-ace7-40b631fd8c02.png)
+Training result  
+![accy_original_spectrograms](https://user-images.githubusercontent.com/36680270/201202295-f7a9d84b-f981-4682-baaa-629bd40704d5.png)
+
+Typical image after passage through fiber  
+![typinputSOLO paper Fig 3f](https://user-images.githubusercontent.com/36680270/201203046-6fa04f06-d4bd-43c6-ad18-e30fe2036aa8.png)
+Training result
+![accy_SOLO paper Fig 3f](https://user-images.githubusercontent.com/36680270/201203484-1a3d6313-5e6a-463b-82f9-0780cabaea7f.png)
+
