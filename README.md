@@ -30,7 +30,7 @@ f2 = sio.loadmat(filepath+'New_audio/label_digits.mat')
 
 out = np.squeeze(f2['label'])  
 """  
-The back end seems to do a similar job with the original spectrograms (stored in the npz file in this repository) than the the spactrograms after passage through the nonlinear fiber. 
+The back end seems to do a similar job with the original spectrograms (stored in the npz file in this repository) than the the spactrograms after passage through the nonlinear fiber. Performance on test data seems better for training on original spectrograms.
 
 Typical original spectrogram (downsampled to 22 by 22 as in the paper)  
 ![typinputoriginal_spectrograms](https://user-images.githubusercontent.com/36680270/201202824-13ed3a00-b45e-415a-ace7-40b631fd8c02.png)
